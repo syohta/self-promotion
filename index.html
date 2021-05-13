@@ -8,6 +8,7 @@
     <style>
         html {
             scroll-behavior: smooth;
+            background-color: skyblue;
         }
         nav {
             position: fixed;
@@ -18,16 +19,72 @@
         li {
             list-style-type: none;
             font-size: 40px;
-            padding: 10px 50px;
+            padding: 10px 100px;
             margin: 50px;
-            border: 1px solid black;
+        }
+        h1,p {
+            padding: 0 150px;
+        }
+        p.right-text {
+            display: flex;
+            justify-content: space-between;
+        }
+        div.box-image img {
+            padding: 10px 150px;
+            width: 50%;
+            height: 50%;
+        }
+        div.box-text {
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <nav><a href="#p">プロフィール</a></nav>
-    <div>
-        <li id="p">プロフィール</li>
+    <nav>
+        <a href="#p">プロフィール</a><br>
+        <a href="#n">氏名</a><br>
+        <a href="#b">生年月日</a><br>
+        <a href="#q">資格</a><br>
+        <a href="#e">最終学歴</a><br>
+        <a href="#s">自己PR</a><br>
+        <a href="#sw">学生作品</a><br>
+    </nav>
+    <li id="p">プロフィール</li>
+    <h1 id="n">氏名</h1>
+    <p>六郷翔太</p>
+    <h1 id="b">生年月日</h1>
+    <p>1999年12月25日</p>
+    <h1 id="q">資格</h1>
+    <p><b>2015年取得</b></p>
+    <p>11月8日　珠算・電卓実務検定試験第3級(電卓)</p>
+    <p><b>2016年取得</b></p>
+    <p>1月24日　全商簿記実務検定試験第3級</p>
+    <p>2月7日　商業経済検定試験ビジネス基礎第3級</p>
+    <p>2月27日　電卓計算能力検定試験第3級</p>
+    <p>6月12日　日商簿記検定試験第3級</p>
+    <p>9月25日　情報処理検定試験ビジネス情報部門第2級</p>
+    <p>9月25日　情報処理検定試験プログラミング部門第2級</p>
+    <p>12月11日　ホームページ作成検定試験第1級</p>
+    <p><b>2017年取得</b></p>
+    <p>6月18日　珠算・電卓実務検定試験普通計算部門第1級(電卓)</p>
+    <p>7月2日　ビジネス文書実務検定試験第1級</p>
+    <h1 id="e">最終学歴</h1>
+    <p>2021年3月卒</p>
+    <p>学校法人滋慶学園東京コミュニケーションアート専門学校</p>
+    <P>コンピュータエンターテインメント科ゲームプログラマー専攻</P>
+    <h1 id="s">自己PR</h1>
+    <p>学生時代には、ゲーム制作をしており、チームでの開発、個人での開発経験があります。</p>
+    <p>また、東京ゲームショウに出展した経験があります。</p>
+    <li id="sw">学生作品</li>
+    <h1>エクステ</h1>
+    <div class="box">
+        <div class="box-image">
+            <img src="images/ekusute1.png">
+            <img src="images/ekusute2.png">
+        </div>
+        <div class="box-text">
+            <p>ゲームジャンル</p>
+        </div>
     </div>
 </body>
 </html>
