@@ -17,37 +17,56 @@
         nav {
             position: fixed;
             background-color: green;
-            padding: 20px;
+            padding: 10px;
             scroll-behavior: smooth;
+            font-size: 80%;
         }
         li {
             list-style-type: none;
             font-size: 40px;
             padding: 10px 100px;
             margin: 50px;
+            color: magenta;
         }
-        div.profile-text, .game-name {
+        h1 {
+            color: white;
+        }
+        .profile-text, .game-name {
             padding: 0 150px;
         }
-        div.box {
+        .box {
             display: flex;
+            /* float: left;
+            display: block; */
         }
-        div.box-image1 img {
+        .box-image1 img {
             padding: 10px 150px;
-            width: 80%;
+            width: 60%;
             height: auto;
         }
-        div.box-image2 img {
+        .box-image2 img {
             padding: 10px 150px;
-            width: 73%;
+            width: 53%;
             height: auto;
         }
-        /* .box-text {
-            position: absolute;
-            right: 0;
-        } */
+        .box-image3 img {
+            padding: 10px 150px;
+            width: 20%;
+            height: auto;
+        }
+        .box-image3 > div {
+            float: left;
+        }
+        .box-text {
+            font-size: 80%;
+            /* position: absolute;
+            right: 0; */
+            /* float: left; */
+        }
     </style>
 </head>
+
+
 <body>
     <nav>
         <a href="#p">プロフィール</a><br>
@@ -57,6 +76,9 @@
         <a href="#e">最終学歴</a><br>
         <a href="#s">自己PR</a><br>
         <a href="#sw">学生作品</a><br>
+        <a href="#sw-1">エクステ</a><br>
+        <a href="#sw-2">Erinyes of the Cyber</a><br>
+        <a href="#sw-3">GyroBalance</a><br>
     </nav>
     <li id="p">プロフィール</li>
     <div class="profile-text">
@@ -86,63 +108,102 @@
         <p>学生時代には、ゲーム制作をしており、チームでの開発、個人での開発経験があります。</p>
         <p>また、東京ゲームショウに出展した経験があります。</p>
     </div>
+
     <li id="sw">学生作品</li>
-    <h1 class="game-name">エクステ</h1>
+    <h1 class="game-name" id="sw-1">エクステ</h1>
     <div class="box">
         <div class="box-image1">
             <img src="images/ekusute1.png">
             <img src="images/ekusute2.png">
         </div>
         <div class="box-text">
-            <p>ゲームジャンル</p>
-            <p>　パズルゲーム</p>
-            <p>プラットフォーム</p>
-            <p>　PC</p>
-            <p>プレイ人数</p>
-            <p>　1人</p>
-            <p>開発期間</p>
-            <p>　2019年2月17日～2019年5月30日</p>
-            <p>開発人数</p>
-            <p>　プログラマー6人、グラフィッカー1人</p>
-            <p>開発環境</p>
-            <p>　C++、Framework(Dx_Libを使用したツール)</p>
-            <p>ゲーム概要</p>
-            <p>　ゲーム大賞を目指して「★」をテーマにしたゲームです。</p>
-            <p>　星の一筆書きで刻み、世界をどんどん拡大していきます。</p>
-            <p>開発担当分野</p>
-            <p>　星の頂点となる円を選択する動作の実装。</p>
-            <p>　壁の配置および崩壊の実装。</p>
-            <p>　ポイントによるステージの拡大の実装。</p>
-            <p>　各種行動のSEの実装。</p>
-            <p>動画URL</p>
-            <p>　<a href="https://youtu.be/db7qWlsH2Lg">https://youtu.be/db7qWlsH2Lg</a></p>
+            <p><b>ゲームジャンル</b></p>
+            <p>パズルゲーム</p>
+            <p><b>プラットフォーム</b></p>
+            <p>PC</p>
+            <p><b>プレイ人数</b></p>
+            <p>1人</p>
+            <p><b>開発期間</b></p>
+            <p>2019年2月17日～2019年5月30日</p>
+            <p><b>開発人数</b></p>
+            <p>プログラマー6人、グラフィッカー1人</p>
+            <p><b>開発環境</b></p>
+            <p>C++、Framework(Dx_Libを使用したツール)</p>
+            <p><b>ゲーム概要</b></p>
+            <p>ゲーム大賞を目指して「★」をテーマにしたゲームです。</p>
+            <p>星の一筆書きで刻み、世界をどんどん拡大していきます。</p>
+            <p><b>開発担当分野</b></p>
+            <p>星の頂点となる円を選択する動作の実装。</p>
+            <p>壁の配置および崩壊の実装。</p>
+            <p>ポイントによるステージの拡大の実装。</p>
+            <p>各種行動のSEの実装。</p>
+            <p><b>動画URL</b></p>
+            <p><a href="https://youtu.be/db7qWlsH2Lg">https://youtu.be/db7qWlsH2Lg</a></p>
         </div>
     </div>
-    <h1 class="game-name">Erinyes of the Cyber</h1>
+    <h1 class="game-name" id="sw-2">Erinyes of the Cyber</h1>
     <div class="box">
         <div class="box-image2">
             <img src="images/novel1.png">
             <img src="images/novel2.png">
         </div>
         <div class="box-text">
-            <p>ゲームジャンル</p>
-            <p>　ノベルゲーム</p>
-            <p>プラットフォーム</p>
-            <p>　PC</p>
-            <p>プレイ人数</p>
-            <p>　1人</p>
-            <p>開発期間</p>
-            <p>　2020年1月～2020年2月</p>
-            <p>開発人数</p>
-            <p>　プログラマー1人、グラフィッカー15人</p>
-            <p>　ノベル専攻5人(原作者1人、サポート4人)</p>
-            <p>開発環境</p>
-            <p>　Unity2018.3.5f1、宴(Asset)</p>
-            <p>開発担当分野</p>
-            <p>　ゲームシステム全般。</p>
-            <p>　シナリオの実装。</p>
-            <p>　フリー素材(BGM等)の収集及び実装。</p>
+            <p><b>ゲームジャンル</b></p>
+            <p>ノベルゲーム</p>
+            <p><b>プラットフォーム</b></p>
+            <p>PC</p>
+            <p><b>プレイ人数</b></p>
+            <p>1人</p>
+            <p><b>開発期間</b></p>
+            <p>2020年1月～2020年2月</p>
+            <p><b>開発人数</b></p>
+            <p>プログラマー1人、グラフィッカー15人</p>
+            <p>ノベル専攻5人(原作者1人、サポート4人)</p>
+            <p><b>開発環境</b></p>
+            <p>Unity2018.3.5f1、宴(Asset)</p>
+            <p><b>開発担当分野</b></p>
+            <p>ゲームシステム全般。</p>
+            <p>シナリオの実装。</p>
+            <p>フリー素材(BGM等)の収集及び実装。</p>
+        </div>
+    </div>
+    <h1 class="game-name" id="sw-3">GyroBalance</h1>
+    <div class="box">
+        <div class="box-image3">
+            <div>
+                <img src="images/gyro_balance1.png">
+                <img src="images/gyro_balance2.png">
+            </div>
+            <div>
+                <img src="images/gyro_balance3.png">
+                <img src="images/gyro_balance4.png">
+            </div>
+        </div>
+        <div class="box-text">
+            <p><b>ゲームジャンル</b></p>
+            <p>バランスゲーム</p>
+            <p><b>プラットフォーム</b></p>
+            <p>iPad等</p>
+            <p><b>プレイ人数</b></p>
+            <p>1人</p>
+            <p><b>開発期間</b></p>
+            <p>2020年12月～2021年2月</p>
+            <p><b>開発人数</b></p>
+            <p>プログラマー1人</p>
+            <p><b>開発環境</b></p>
+            <p>Unity2019.3.1f1</p>
+            <p><b>ゲーム概要</b></p>
+            <p>2種類のゲームがある。</p>
+            <p>1つ目はゴールを目指すこと。</p>
+            <p>2つ目は制限時間まで生き残ること。</p>
+            <p>プレイヤーの操作方法は端末前後左右に傾ける。</p>
+            <p>ジャイロセンサーの基準値を垂直にしている。</p>
         </div>
     </div>
 </body>
+
+
+<script>
+    'use strict';
+</script>
 </html>
