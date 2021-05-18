@@ -63,6 +63,17 @@
             right: 0; */
             /* float: left; */
         }
+        .js-animation {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY( 40px );
+            transition: all 1s;
+        }
+        .js-animation.is-show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY( 0px );
+        }
     </style>
 </head>
 
@@ -80,6 +91,7 @@
         <a href="#sw-2">Erinyes of the Cyber</a><br>
         <a href="#sw-3">GyroBalance</a><br>
     </nav>
+
     <li id="p">プロフィール</li>
     <div class="profile-text">
         <h1 id="n">氏名</h1>
@@ -113,8 +125,8 @@
     <h1 class="game-name" id="sw-1">エクステ</h1>
     <div class="box">
         <div class="box-image1">
-            <img src="images/ekusute1.png">
-            <img src="images/ekusute2.png">
+            <div class="element js-animation"><img src="images/ekusute1.png"></div>
+            <div class="element js-animation"><img src="images/ekusute2.png"></div>
         </div>
         <div class="box-text">
             <p><b>ゲームジャンル</b></p>
@@ -144,8 +156,8 @@
     <h1 class="game-name" id="sw-2">Erinyes of the Cyber</h1>
     <div class="box">
         <div class="box-image2">
-            <img src="images/novel1.png">
-            <img src="images/novel2.png">
+            <div class="element js-animation"><img src="images/novel1.png"></div>
+            <div class="element js-animation"><img src="images/novel2.png"></div>
         </div>
         <div class="box-text">
             <p><b>ゲームジャンル</b></p>
@@ -171,10 +183,14 @@
     <div class="box">
         <div class="box-image3">
             <div>
+                <!-- <div class="element js-animation"><img src="images/gyro_balance1.png"></div> -->
+                <!-- <div class="element js-animation"><img src="images/gyro_balance2.png"></div> -->
                 <img src="images/gyro_balance1.png">
                 <img src="images/gyro_balance2.png">
             </div>
             <div>
+                <!-- <div class="element js-animation"><img src="images/gyro_balance3.png"></div> -->
+                <!-- <div class="element js-animation"><img src="images/gyro_balance4.png"></div> -->
                 <img src="images/gyro_balance3.png">
                 <img src="images/gyro_balance4.png">
             </div>
@@ -205,5 +221,27 @@
 
 <script>
     'use strict';
+
+    function showElementAnimation( ) {
+        const element = document.getElementsByClassName( 'js-animation' );
+        if ( !element ) {
+            return;
+        }
+        const showTiming = window.innerHeight > 768 ? 200 : 40;
+        const scrollY = window.pageYOffset;
+        const windowH = window.innerHeight;
+
+        for ( let i = 0; i < element.length; i++ ) {
+            const elemClientRect = element[ i ].getBoundingClientRect( );
+            const elemY = scrollY + elemClientRect.top;
+            if ( scrollY + windowH - showTiming > elemY ) {
+                element[ i ].classList.add( 'is-show' );
+            } else if ( scrollY + windowH < elemY ) {
+                element[ i ].classList.remove( 'is-show' );
+            }
+        }
+    }
+    showElementAnimation( );
+    window.addEventListener( 'scroll', showElementAnimation );
 </script>
 </html>
