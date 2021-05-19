@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <title>自己PRサイト</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <style>
         /* * {
             margin: 0;
@@ -13,6 +14,48 @@
         html {
             scroll-behavior: smooth;
             background-color: skyblue;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* overflow-x: hidden; */
+        }
+        #main {
+            background-color: skyblue;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 8px;
+            z-index: 2;
+            overflow: auto;
+            box-sizing: border-box;
+            transition: .4s;
+        }
+        #menu {
+            background-color: green;
+            color: black;
+            position: absolute;
+            top: 0;
+            left: 0px;
+            padding: 8px;
+            width: 180px;
+            min-height: 100%;
+            z-index: 1;
+            box-sizing: border-box;
+            transition: .4s;
+        }
+        #open, #close {
+            float: left;
+            cursor: pointer;
+        }
+        /* #cover.menu-open {
+            display: block;
+        } */
+        #main.menu-open {
+            left: 150px;
         }
         nav {
             position: fixed;
@@ -24,7 +67,8 @@
         li {
             list-style-type: none;
             font-size: 40px;
-            padding: 10px 100px;
+            /* padding: 10px 100px; */
+            padding: 0;
             margin: 50px;
             color: magenta;
         }
@@ -32,7 +76,8 @@
             color: white;
         }
         .profile-text, .game-name {
-            padding: 0 150px;
+            /* padding: 0 150px; */
+            padding: 0;
         }
         .box {
             display: flex;
@@ -40,17 +85,20 @@
             display: block; */
         }
         .box-image1 img {
-            padding: 10px 150px;
+            /* padding: 10px 150px; */
+            padding: 10px 0;
             width: 60%;
             height: auto;
         }
         .box-image2 img {
-            padding: 10px 150px;
+            /* padding: 10px 150px; */
+            padding: 10px 0;
             width: 53%;
             height: auto;
         }
         .box-image3 img {
-            padding: 10px 150px;
+            /* padding: 10px 150px; */
+            padding: 10px 0;
             width: 20%;
             height: auto;
         }
@@ -58,7 +106,7 @@
             float: left;
         }
         .box-text {
-            font-size: 80%;
+            font-size: 100%;
             /* position: absolute;
             right: 0; */
             /* float: left; */
@@ -79,6 +127,7 @@
 
 
 <body>
+<div id="menu">
     <nav>
         <a href="#p">プロフィール</a><br>
         <a href="#n">氏名</a><br>
@@ -91,7 +140,10 @@
         <a href="#sw-2">Erinyes of the Cyber</a><br>
         <a href="#sw-3">GyroBalance</a><br>
     </nav>
+</div>
 
+<div id="main">
+    <i class="fa fa-bars" id="open"></i>
     <li id="p">プロフィール</li>
     <div class="profile-text">
         <h1 id="n">氏名</h1>
@@ -125,8 +177,10 @@
     <h1 class="game-name" id="sw-1">エクステ</h1>
     <div class="box">
         <div class="box-image1">
-            <div class="element js-animation"><img src="images/ekusute1.png"></div>
-            <div class="element js-animation"><img src="images/ekusute2.png"></div>
+            <!-- <div class="element js-animation"><img src="images/ekusute1.png"></div>
+            <div class="element js-animation"><img src="images/ekusute2.png"></div> -->
+            <img src="images/ekusute1.png">
+            <img src="images/ekusute2.png">
         </div>
         <div class="box-text">
             <p><b>ゲームジャンル</b></p>
@@ -156,8 +210,10 @@
     <h1 class="game-name" id="sw-2">Erinyes of the Cyber</h1>
     <div class="box">
         <div class="box-image2">
-            <div class="element js-animation"><img src="images/novel1.png"></div>
-            <div class="element js-animation"><img src="images/novel2.png"></div>
+            <!-- <div class="element js-animation"><img src="images/novel1.png"></div>
+            <div class="element js-animation"><img src="images/novel2.png"></div> -->
+            <img src="images/novel1.png">
+            <img src="images/novel2.png">
         </div>
         <div class="box-text">
             <p><b>ゲームジャンル</b></p>
@@ -216,32 +272,44 @@
             <p>ジャイロセンサーの基準値を垂直にしている。</p>
         </div>
     </div>
-</body>
+</div>
 
+    <script>
+        'use strict';
 
-<script>
-    'use strict';
+        const open = document.getElementById( 'open' );
+        const main = document.getElementById( 'main' );
 
-    function showElementAnimation( ) {
-        const element = document.getElementsByClassName( 'js-animation' );
-        if ( !element ) {
-            return;
-        }
-        const showTiming = window.innerHeight > 768 ? 200 : 40;
-        const scrollY = window.pageYOffset;
-        const windowH = window.innerHeight;
+        open.addEventListener( 'click', ( ) => {
+            if ( main.className === 'menu-open' ) {
+                main.className = '';
+            } else {
+                main.className = 'menu-open';
+            }
+        } );
 
-        for ( let i = 0; i < element.length; i++ ) {
-            const elemClientRect = element[ i ].getBoundingClientRect( );
-            const elemY = scrollY + elemClientRect.top;
-            if ( scrollY + windowH - showTiming > elemY ) {
-                element[ i ].classList.add( 'is-show' );
-            } else if ( scrollY + windowH < elemY ) {
-                element[ i ].classList.remove( 'is-show' );
+        // フェード処理
+        function showElementAnimation( ) {
+            const element = document.getElementsByClassName( 'js-animation' );
+            if ( !element ) {
+                return;
+            }
+            const showTiming = window.innerHeight > 768 ? 200 : 40;
+            const scrollY = window.pageYOffset;
+            const windowH = window.innerHeight;
+
+            for ( let i = 0; i < element.length; i++ ) {
+                const elemClientRect = element[ i ].getBoundingClientRect( );
+                const elemY = scrollY + elemClientRect.top;
+                if ( scrollY + windowH - showTiming > elemY ) {
+                    element[ i ].classList.add( 'is-show' );
+                } else if ( scrollY + windowH < elemY ) {
+                    element[ i ].classList.remove( 'is-show' );
+                }
             }
         }
-    }
-    showElementAnimation( );
-    window.addEventListener( 'scroll', showElementAnimation );
-</script>
+        showElementAnimation( );
+        window.addEventListener( 'scroll', showElementAnimation );
+    </script>
+</body>
 </html>
