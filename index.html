@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>自己PRサイト</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+        html {
+            scroll-behavior: smooth;
+            background-color: skyblue;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* overflow-x: hidden; */
+        }
+        #main {
+            background-color: skyblue;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 8px;
+            z-index: 2;
+            overflow: auto;
+            box-sizing: border-box;
+            transition: .4s;
+        }
+        #menu {
+            background-color: green;
+            color: black;
+            position: absolute;
+            top: 0;
+            left: 0px;
+            padding: 8px;
+            width: 180px;
+            min-height: 100%;
+            z-index: 1;
+            box-sizing: border-box;
+            transition: .4s;
+        }
+        #open, #close {
+            float: left;
+            cursor: pointer;
+        }
+        /* #cover.menu-open {
+            display: block;
+        } */
+        #main.menu-open {
+            left: 150px;
+        }
+        nav {
+            position: fixed;
+            background-color: green;
+            padding: 10px;
+            scroll-behavior: smooth;
+            font-size: 80%;
+        }
+        li {
+            list-style-type: none;
+            font-size: 40px;
+            /* padding: 10px 100px; */
+            padding: 0;
+            margin: 50px;
+            color: magenta;
+        }
+        h1 {
+            color: white;
+        }
+        .profile-text, .game-name {
+            /* padding: 0 150px; */
+            padding: 0;
+        }
+        .box {
+            display: flex;
+            /* float: left;
+            display: block; */
+        }
+        .box-image1 img {
+            /* padding: 10px 150px; */
+            padding: 10px 0;
+            width: 60%;
+            height: auto;
+        }
+        .box-image2 img {
+            /* padding: 10px 150px; */
+            padding: 10px 0;
+            width: 53%;
+            height: auto;
+        }
+        .box-image3 img {
+            /* padding: 10px 150px; */
+            padding: 10px 0;
+            width: 20%;
+            height: auto;
+        }
+        .box-image3 > div {
+            float: left;
+        }
+        .box-text {
+            font-size: 100%;
+            /* position: absolute;
+            right: 0; */
+            /* float: left; */
+        }
+        .js-animation {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY( 40px );
+            transition: all 1s;
+        }
+        .js-animation.is-show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY( 0px );
+        }
+    </style>
+</head>
+
+
+<body>
+<div id="menu">
+    <nav>
+        <a href="#p">プロフィール</a><br>
+        <a href="#n">氏名</a><br>
+        <a href="#b">生年月日</a><br>
+        <a href="#q">資格</a><br>
+        <a href="#e">最終学歴</a><br>
+        <a href="#s">自己PR</a><br>
+        <a href="#sw">学生作品</a><br>
+        <a href="#sw-1">エクステ</a><br>
+        <a href="#sw-2">Erinyes of the Cyber</a><br>
+        <a href="#sw-3">GyroBalance</a><br>
+    </nav>
+</div>
+
+<div id="main">
+    <i class="fa fa-bars" id="open"></i>
+    <li id="p">プロフィール</li>
+    <div class="profile-text">
+        <h1 id="n">氏名</h1>
+        <p>六郷翔太</p>
+        <h1 id="b">生年月日</h1>
+        <p>1999年12月25日</p>
+        <h1 id="q">資格</h1>
+        <p><b>2015年取得</b></p>
+        <p>11月8日　珠算・電卓実務検定試験第3級(電卓)</p>
+        <p><b>2016年取得</b></p>
+        <p>1月24日　全商簿記実務検定試験第3級</p>
+        <p>2月7日　商業経済検定試験ビジネス基礎第3級</p>
+        <p>2月27日　電卓計算能力検定試験第3級</p>
+        <p>6月12日　日商簿記検定試験第3級</p>
+        <p>9月25日　情報処理検定試験ビジネス情報部門第2級</p>
+        <p>9月25日　情報処理検定試験プログラミング部門第2級</p>
+        <p>12月11日　ホームページ作成検定試験第1級</p>
+        <p><b>2017年取得</b></p>
+        <p>6月18日　珠算・電卓実務検定試験普通計算部門第1級(電卓)</p>
+        <p>7月2日　ビジネス文書実務検定試験第1級</p>
+        <h1 id="e">最終学歴</h1>
+        <p>2021年3月卒</p>
+        <p>学校法人滋慶学園東京コミュニケーションアート専門学校</p>
+        <P>コンピュータエンターテインメント科ゲームプログラマー専攻</P>
+        <h1 id="s">自己PR</h1>
+        <p>学生時代には、ゲーム制作をしており、チームでの開発、個人での開発経験があります。</p>
+        <p>また、東京ゲームショウに出展した経験があります。</p>
+    </div>
+
+    <li id="sw">学生作品</li>
+    <h1 class="game-name" id="sw-1">エクステ</h1>
+    <div class="box">
+        <div class="box-image1">
+            <!-- <div class="element js-animation"><img src="images/ekusute1.png"></div>
+            <div class="element js-animation"><img src="images/ekusute2.png"></div> -->
+            <img src="images/ekusute1.png">
+            <img src="images/ekusute2.png">
+        </div>
+        <div class="box-text">
+            <p><b>ゲームジャンル</b></p>
+            <p>パズルゲーム</p>
+            <p><b>プラットフォーム</b></p>
+            <p>PC</p>
+            <p><b>プレイ人数</b></p>
+            <p>1人</p>
+            <p><b>開発期間</b></p>
+            <p>2019年2月17日～2019年5月30日</p>
+            <p><b>開発人数</b></p>
+            <p>プログラマー6人、グラフィッカー1人</p>
+            <p><b>開発環境</b></p>
+            <p>C++、Framework(Dx_Libを使用したツール)</p>
+            <p><b>ゲーム概要</b></p>
+            <p>ゲーム大賞を目指して「★」をテーマにしたゲームです。</p>
+            <p>星の一筆書きで刻み、世界をどんどん拡大していきます。</p>
+            <p><b>開発担当分野</b></p>
+            <p>星の頂点となる円を選択する動作の実装。</p>
+            <p>壁の配置および崩壊の実装。</p>
+            <p>ポイントによるステージの拡大の実装。</p>
+            <p>各種行動のSEの実装。</p>
+            <p><b>動画URL</b></p>
+            <p><a href="https://youtu.be/db7qWlsH2Lg">https://youtu.be/db7qWlsH2Lg</a></p>
+        </div>
+    </div>
+    <h1 class="game-name" id="sw-2">Erinyes of the Cyber</h1>
+    <div class="box">
+        <div class="box-image2">
+            <!-- <div class="element js-animation"><img src="images/novel1.png"></div>
+            <div class="element js-animation"><img src="images/novel2.png"></div> -->
+            <img src="images/novel1.png">
+            <img src="images/novel2.png">
+        </div>
+        <div class="box-text">
+            <p><b>ゲームジャンル</b></p>
+            <p>ノベルゲーム</p>
+            <p><b>プラットフォーム</b></p>
+            <p>PC</p>
+            <p><b>プレイ人数</b></p>
+            <p>1人</p>
+            <p><b>開発期間</b></p>
+            <p>2020年1月～2020年2月</p>
+            <p><b>開発人数</b></p>
+            <p>プログラマー1人、グラフィッカー15人</p>
+            <p>ノベル専攻5人(原作者1人、サポート4人)</p>
+            <p><b>開発環境</b></p>
+            <p>Unity2018.3.5f1、宴(Asset)</p>
+            <p><b>開発担当分野</b></p>
+            <p>ゲームシステム全般。</p>
+            <p>シナリオの実装。</p>
+            <p>フリー素材(BGM等)の収集及び実装。</p>
+        </div>
+    </div>
+    <h1 class="game-name" id="sw-3">GyroBalance</h1>
+    <div class="box">
+        <div class="box-image3">
+            <div>
+                <!-- <div class="element js-animation"><img src="images/gyro_balance1.png"></div> -->
+                <!-- <div class="element js-animation"><img src="images/gyro_balance2.png"></div> -->
+                <img src="images/gyro_balance1.png">
+                <img src="images/gyro_balance2.png">
+            </div>
+            <div>
+                <!-- <div class="element js-animation"><img src="images/gyro_balance3.png"></div> -->
+                <!-- <div class="element js-animation"><img src="images/gyro_balance4.png"></div> -->
+                <img src="images/gyro_balance3.png">
+                <img src="images/gyro_balance4.png">
+            </div>
+        </div>
+        <div class="box-text">
+            <p><b>ゲームジャンル</b></p>
+            <p>バランスゲーム</p>
+            <p><b>プラットフォーム</b></p>
+            <p>iPad等</p>
+            <p><b>プレイ人数</b></p>
+            <p>1人</p>
+            <p><b>開発期間</b></p>
+            <p>2020年12月～2021年2月</p>
+            <p><b>開発人数</b></p>
+            <p>プログラマー1人</p>
+            <p><b>開発環境</b></p>
+            <p>Unity2019.3.1f1</p>
+            <p><b>ゲーム概要</b></p>
+            <p>2種類のゲームがある。</p>
+            <p>1つ目はゴールを目指すこと。</p>
+            <p>2つ目は制限時間まで生き残ること。</p>
+            <p>プレイヤーの操作方法は端末前後左右に傾ける。</p>
+            <p>ジャイロセンサーの基準値を垂直にしている。</p>
+        </div>
+    </div>
+</div>
+
+    <script>
+        'use strict';
+
+        const open = document.getElementById( 'open' );
+        const main = document.getElementById( 'main' );
+
+        open.addEventListener( 'click', ( ) => {
+            if ( main.className === 'menu-open' ) {
+                main.className = '';
+            } else {
+                main.className = 'menu-open';
+            }
+        } );
+
+        // フェード処理
+        function showElementAnimation( ) {
+            const element = document.getElementsByClassName( 'js-animation' );
+            if ( !element ) {
+                return;
+            }
+            const showTiming = window.innerHeight > 768 ? 200 : 40;
+            const scrollY = window.pageYOffset;
+            const windowH = window.innerHeight;
+
+            for ( let i = 0; i < element.length; i++ ) {
+                const elemClientRect = element[ i ].getBoundingClientRect( );
+                const elemY = scrollY + elemClientRect.top;
+                if ( scrollY + windowH - showTiming > elemY ) {
+                    element[ i ].classList.add( 'is-show' );
+                } else if ( scrollY + windowH < elemY ) {
+                    element[ i ].classList.remove( 'is-show' );
+                }
+            }
+        }
+        showElementAnimation( );
+        window.addEventListener( 'scroll', showElementAnimation );
+    </script>
+</body>
+</html>
